@@ -12,11 +12,11 @@ from .serializers import ProductSerializer,CategorySerializer
 
 
 class LatestProductsList(APIView):
-    
     def get(self,request,format=None):
         products = Product.objects.all()
         serializer = ProductSerializer(products,many=True)
         return Response(serializer.data)
+
 
 class ProductDetail(APIView):
 
